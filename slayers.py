@@ -141,6 +141,30 @@ class MainPage(webapp2.RequestHandler):
         if gold > 0 or silver > 0:
             copper = str(copper).zfill(2)
         s_price = [gold,silver,copper]
+        gold = int(mithril_price/10000)
+        silver = int((mithril_price-gold*10000)/100)
+        copper = mithril_price-gold*10000-silver*100
+        if gold > 0:
+            silver = str(silver).zfill(2)
+        if gold > 0 or silver > 0:
+            copper = str(copper).zfill(2)
+        m_price = [gold,silver,copper]
+        gold = int(elder_price/10000)
+        silver = int((elder_price-gold*10000)/100)
+        copper = elder_price-gold*10000-silver*100
+        if gold > 0:
+            silver = str(silver).zfill(2)
+        if gold > 0 or silver > 0:
+            copper = str(copper).zfill(2)
+        e_price = [gold,silver,copper]
+        gold = int(t5_price/10000)
+        silver = int((t5_price-gold*10000)/100)
+        copper = t5_price-gold*10000-silver*100
+        if gold > 0:
+            silver = str(silver).zfill(2)
+        if gold > 0 or silver > 0:
+            copper = str(copper).zfill(2)
+        t5_arr = [gold,silver,copper]
         t5 = ''
         if t5_id == venom_id:
             t5 = 'Potent Venom Sac'
@@ -157,10 +181,10 @@ class MainPage(webapp2.RequestHandler):
         if t5_id == fang_id:
             t5 = 'Large Fang'
         template_values = {
-            'mithril_price': mithril_price,
-            'elder_price': elder_price,
+            'mithril_price': m_price,
+            'elder_price': e_price,
             't5_name': t5,
-            't5_price': t5_price,
+            't5_price': t5_arr,
             'slayer_price': s_price,
             'profits': Profits(custom_val),
         }
