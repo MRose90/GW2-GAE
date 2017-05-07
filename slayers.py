@@ -116,7 +116,7 @@ def Profits(custom=None):
         p.append([250,gold,silver,copper])
         if custom and int(custom) > 250:
             try:
-                s 
+                profit = int((slayer_price*.85-base)*custom)
                 gold = int(profit/10000)
                 silver = int((profit-gold*10000)/100)
                 copper = profit-gold*10000-silver*100
