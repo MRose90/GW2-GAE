@@ -67,18 +67,23 @@ def Update():
                 if val < slayer_price:
                     slayer_price = val
 
-
-def Profits(custom=None):
-    p = []
-    base = mithril_price*24+elder_price*12+t5_price*15
-    profit = int(slayer_price*.85-base)
-    gold = int(profit/10000)
-    silver = int((profit-gold*10000)/100)
-    copper = profit-gold*10000-silver*100
+def ConvertPrice(price):
+    gold = int(price/10000)
+    silver = int((price-gold*10000)/100)
+    copper = price-gold*10000-silver*100
     if gold > 0:
         silver = str(silver).zfill(2)   
     if gold > 0 or silver > 0:
         copper = str(copper).zfill(2)
+    return gold,silver,copper
+
+
+    
+def Profits(custom=None):
+    p = []
+    base = mithril_price*24+elder_price*12+t5_price*15
+    profit = int(slayer_price*.85-base)
+    gold,silver,copper = ConvertPrice(profit)
     p.append([1,gold,silver,copper])
     if custom:
         try:
@@ -87,44 +92,19 @@ def Profits(custom=None):
             custom = None
     if custom and int(custom) > 1 and int(custom) < 250:
         profit = int(float(slayer_price*.85-base)*int(custom))
-        gold = int(profit/10000)
-        silver = int((profit-gold*10000)/100)
-        copper = profit-gold*10000-silver*100
-        if gold > 0:
-            silver = str(silver).zfill(2)
-        if gold > 0 or silver > 0:
-            copper = str(copper).zfill(2)
-        profit = int((slayer_price*.85-base)*250)
+        gold,silver,copper = ConvertPrice(profit)
         p.append([int(custom),gold,silver,copper])
-        gold = int(profit/10000)
-        silver = int((profit-gold*10000)/100)
-        copper = profit-gold*10000-silver*100
-        if gold > 0:
-            silver = str(silver).zfill(2)
-        if gold > 0 or silver > 0:
-            copper = str(copper).zfill(2)
+        profit = int(float(slayer_price*.85-base)*250)
+        gold,silver,copper = ConvertPrice(profit)
         p.append([250,gold,silver,copper])
     else:
         profit = int((slayer_price*.85-base)*250)
-        gold = int(profit/10000)
-        silver = int((profit-gold*10000)/100)
-        copper = profit-gold*10000-silver*100
-        if gold > 0:
-            silver = str(silver).zfill(2)
-        if gold > 0 or silver > 0:
-            copper = str(copper).zfill(2)
+        gold,silver,copper = ConvertPrice(profit)
         p.append([250,gold,silver,copper])
         if custom and int(custom) > 250:
             try:
                 profit = int((slayer_price*.85-base)*custom)
-                gold = int(profit/10000)
-                silver = int((profit-gold*10000)/100)
-                copper = profit-gold*10000-silver*100
-                if gold > 0:
-                    silver = str(silver).zfill(2)
-                if gold > 0 or silver > 0:
-                    copper = str(copper).zfill(2)
-                profit = int((slayer_price*.85-base)*250)
+                gold,silver,copper = ConvertPrice(profit)
                 p.append([int(custom),gold,silver,copper])
             except:
                 pass
@@ -133,37 +113,13 @@ class MainPage(webapp2.RequestHandler):
     def get(self):
         Update()
         custom_val = self.request.get('custom')
-        gold = int(slayer_price/10000)
-        silver = int((slayer_price-gold*10000)/100)
-        copper = slayer_price-gold*10000-silver*100
-        if gold > 0:
-            silver = str(silver).zfill(2)
-        if gold > 0 or silver > 0:
-            copper = str(copper).zfill(2)
+        gold,silver,copper = ConvertPrice(slayer_price)
         s_price = [gold,silver,copper]
-        gold = int(mithril_price/10000)
-        silver = int((mithril_price-gold*10000)/100)
-        copper = mithril_price-gold*10000-silver*100
-        if gold > 0:
-            silver = str(silver).zfill(2)
-        if gold > 0 or silver > 0:
-            copper = str(copper).zfill(2)
+        gold,silver,copper = ConvertPrice(mithril_price)
         m_price = [gold,silver,copper]
-        gold = int(elder_price/10000)
-        silver = int((elder_price-gold*10000)/100)
-        copper = elder_price-gold*10000-silver*100
-        if gold > 0:
-            silver = str(silver).zfill(2)
-        if gold > 0 or silver > 0:
-            copper = str(copper).zfill(2)
+        gold,silver,copper = ConvertPrice(elder_price)
         e_price = [gold,silver,copper]
-        gold = int(t5_price/10000)
-        silver = int((t5_price-gold*10000)/100)
-        copper = t5_price-gold*10000-silver*100
-        if gold > 0:
-            silver = str(silver).zfill(2)
-        if gold > 0 or silver > 0:
-            copper = str(copper).zfill(2)
+        gold,silver,copper = ConvertPrice(t5_price)
         t5_arr = [gold,silver,copper]
         t5 = ''
         if t5_id == venom_id:
