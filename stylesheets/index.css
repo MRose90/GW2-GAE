@@ -1,0 +1,34 @@
+body{
+font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+
+.title{
+    text-align: center;
+}
+
+.description{
+    margin: 0 auto;
+    width: 75%;
+    padding-bottom: 2em;
+    padding-top: 2em;
+}
+
+.link{
+    text-align: center;
+}
+
+.state{
+    text-align: center;
+    font-size: 24;
+}
+
+.greeting{
+    text-align: center;
+    padding-bottom: 2em;
+    padding-top: 2em;
+}
+
+footer{
+font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+font-size: 10
+}
