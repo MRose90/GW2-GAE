@@ -46,6 +46,7 @@ def Update():
         t5s = [venom_id,scale_id,totem_id,blood_id,claw_id,bone_id,fang_id]
         slayers = [carrion_id,cleric_id, berserker_id,rampager_id,knight_id,valkyrie_id,assassin_id]
         global t5_price
+        global t5_id
         global slayer_price
         global mithril_price
         global elder_price
@@ -114,16 +115,19 @@ def Profits(custom=None):
             copper = str(copper).zfill(2)
         p.append([250,gold,silver,copper])
         if custom and int(custom) > 250:
-            profit = int(float(slayer_price*.85-base)*int(custom))
-            gold = int(profit/10000)
-            silver = int((profit-gold*10000)/100)
-            copper = profit-gold*10000-silver*100
-            if gold > 0:
-                silver = str(silver).zfill(2)
-            if gold > 0 or silver > 0:
-                copper = str(copper).zfill(2)
-            profit = int((slayer_price*.85-base)*250)
-            p.append([int(custom),gold,silver,copper])
+            try:
+                s 
+                gold = int(profit/10000)
+                silver = int((profit-gold*10000)/100)
+                copper = profit-gold*10000-silver*100
+                if gold > 0:
+                    silver = str(silver).zfill(2)
+                if gold > 0 or silver > 0:
+                    copper = str(copper).zfill(2)
+                profit = int((slayer_price*.85-base)*250)
+                p.append([int(custom),gold,silver,copper])
+            except:
+                pass
     return p
 class MainPage(webapp2.RequestHandler):
     def get(self):
@@ -137,10 +141,25 @@ class MainPage(webapp2.RequestHandler):
         if gold > 0 or silver > 0:
             copper = str(copper).zfill(2)
         s_price = [gold,silver,copper]
+        t5 = ''
+        if t5_id == venom_id:
+            t5 = 'Potent Venom Sac'
+        if t5_id == scale_id:
+            t5 = 'Large Scale'
+        if t5_id == totem_id:
+            t5 = 'Intricate Totem'
+        if t5_id == blood_id:
+            t5 = 'Vial of Potent Blood'
+        if t5_id == claw_id:
+            t5 = 'Large Claw'
+        if t5_id == bone_id:
+            t5 = 'Large Bone'
+        if t5_id == fang_id:
+            t5 = 'Large Fang'
         template_values = {
             'mithril_price': mithril_price,
             'elder_price': elder_price,
-            't5_name': 'Large Scale',
+            't5_name': t5,
             't5_price': t5_price,
             'slayer_price': s_price,
             'profits': Profits(custom_val),
