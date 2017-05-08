@@ -5,7 +5,8 @@
 }
 
 body{
-font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+font-family: Book Antiqua,Palatino Linotype, Palatino,Bookman, Arial;
+font-size: 18;
 }
 
 .slayers{
@@ -23,8 +24,8 @@ background-repeat: no-repeat;
     margin: 0 auto;
     color: var(--main-font-color);
     width: var(--main-width);
-    padding-bottom: 2em;
-    padding-top: 2em;
+    padding-bottom: 1em;
+    padding-top: 1em;
 }
 
 .title{
@@ -51,7 +52,7 @@ a {
 footer{
 margin: 0 auto;
 width: var(--main-width);
-font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+font-family: Book Antiqua,Palatino Linotype, Palatino,Bookman, Arial;
 font-size: 12;
 color: var(--main-font-color);
 background-color : var(--main-bg-color);
