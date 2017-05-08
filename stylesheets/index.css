@@ -6,8 +6,25 @@
 
 body{
 font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-background-image: url("../images/bg.jpg");
+}
 
+.slayers{
+background-image: url("../images/slayers.jpg");
+}
+
+.legal{
+background-color : rgb(40,37,37);
+background-image: url("../images/legal.png");
+background-position: left;
+background-repeat: no-repeat;
+}
+
+.legaltext{
+    margin: 0 auto;
+    color: var(--main-font-color);
+    width: var(--main-width);
+    padding-bottom: 2em;
+    padding-top: 2em;
 }
 
 .title{
@@ -25,18 +42,6 @@ background-image: url("../images/bg.jpg");
     padding-bottom: 2em;
     padding-top: 2em;
     background-color : var(--main-bg-color);
-}
-
-
-.state{
-    text-align: center;
-    font-size: 24;
-}
-
-.greeting{
-    text-align: center;
-    padding-bottom: 2em;
-    padding-top: 2em;
 }
 
 a {
