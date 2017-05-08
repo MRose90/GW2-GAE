@@ -16,7 +16,7 @@ background-image: url("../images/slayers.jpg");
 .legal{
 background-color : rgb(40,37,37);
 background-image: url("../images/legal.png");
-background-position: left;
+background-position: left bottom;
 background-repeat: no-repeat;
 }
 
