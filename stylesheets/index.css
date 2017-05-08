@@ -1,21 +1,32 @@
+:root {
+   --main-bg-color: rgba(0, 0, 0, 0.4);
+   --main-font-color: rgb(255,255,255);
+   --main-width: 50%
+}
+
 body{
 font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+background-image: url("../images/bg.jpg");
+
 }
 
 .title{
+    margin: 0 auto;
+    color: var(--main-font-color);
     text-align: center;
+    width: var(--main-width);
+    background-color : var(--main-bg-color);
 }
 
 .description{
     margin: 0 auto;
-    width: 75%;
+    color: var(--main-font-color);
+    width: var(--main-width);
     padding-bottom: 2em;
     padding-top: 2em;
+    background-color : var(--main-bg-color);
 }
 
-.link{
-    text-align: center;
-}
 
 .state{
     text-align: center;
@@ -28,7 +39,15 @@ font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", He
     padding-top: 2em;
 }
 
+a {
+    color: rgb(255,255,0);
+}
+
 footer{
+margin: 0 auto;
+width: var(--main-width);
 font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-font-size: 10
+font-size: 12;
+color: var(--main-font-color);
+background-color : var(--main-bg-color);
 }

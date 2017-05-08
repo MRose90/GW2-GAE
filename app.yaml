@@ -9,6 +9,9 @@ handlers:
   static_dir: images
 - url: /krait.*
   script: slayers.application
+- url: /legal
+  static_files: legal.html
+  upload: legal.html
 
 libraries:
 - name: webapp2
