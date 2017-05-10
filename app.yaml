@@ -12,6 +12,9 @@ handlers:
 - url: /legal
   static_files: legal.html
   upload: legal.html
+- url: /
+  static_files: index.html
+  upload: index.html
 
 libraries:
 - name: webapp2

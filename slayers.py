@@ -68,13 +68,23 @@ def Update():
                     slayer_price = val
 
 def ConvertPrice(price):
-    gold = int(price/10000)
-    silver = int((price-gold*10000)/100)
-    copper = price-gold*10000-silver*100
-    if gold > 0:
-        silver = str(silver).zfill(2)   
-    if gold > 0 or silver > 0:
-        copper = str(copper).zfill(2)
+    if price >= 0:
+        gold = int(price/10000)
+        silver = int((price-gold*10000)/100)
+        copper = price-gold*10000-silver*100
+        if gold > 0:
+            silver = str(silver).zfill(2)   
+        if gold > 0 or silver > 0:
+            copper = str(copper).zfill(2)
+    else:
+        price = float(price)
+        gold = int(price/10000)
+        silver = int((price-gold*10000)/100)
+        copper = int(price-gold*10000-silver*100)
+        if gold > 0:
+            silver = str(silver).zfill(2)   
+        if gold > 0 or silver > 0:
+            copper = str(copper).zfill(2)
     return gold,silver,copper
 
 
