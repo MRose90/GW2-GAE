@@ -13,13 +13,13 @@ handlers:
   static_dir: scripts
 - url: /crafting.*
   script: slayers.application
-- url: /legal
-  script: legal.application
+- url: /legal.*
+  script: static_routing.app
 - url: /gathering
-  static_files: gathering.html
-  upload: gathering.html
+  static_files: templates/gathering.html
+  upload: templates/gathering.html
 - url: /
-  script: index.app
+  script: static_routing.app
 
 libraries:
 - name: webapp2

@@ -154,10 +154,15 @@ class MainPage(webapp2.RequestHandler):
             'slayer_price': s_price,
             'profits': Profits(custom_val),
         }
-        template = JINJA_ENVIRONMENT.get_template('slayers.html')
+        template = JINJA_ENVIRONMENT.get_template('templates/slayers.html')
         self.response.write(template.render(template_values))
+
+class Redirect(webapp2.RequestHandler):
+    def get(self):
+        self.redirect('/crafting')
         
 application = webapp2.WSGIApplication([
+    ('/crafting/', Redirect),
     ('/crafting', MainPage),
 ], debug=True)
 
