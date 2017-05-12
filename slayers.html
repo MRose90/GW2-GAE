@@ -1,96 +1,92 @@
 <html>
-<head>
-    <link type="text/css" rel="stylesheet" href="stylesheets/index.css" />
-</head>
+    <head>
+        <link type="text/css" rel="stylesheet" href="stylesheets/index.css" />
+    </head>
+    {% include "header.html" %}
     <body class="slayers">
         <div class="title">
-            <h1>Krait Slayer<br>Crafting Calculator</h1>
+                <h1>Krait Slayer Crafting Calculator</h1>
         </div>
         <div class="description">
-		<h2>What to Buy For Each Krait Slayer</h2>
-		<p>
-		24 <img src="images/20px-Mithril_Ore.png">Mithril Ore for {% if mithril_price[0] != 0 %}
-				{{mithril_price[0]}}<img src="images/Gold_coin.png">
-			{% endif %}
-				{% if mithril_price[0] != 0 or mithril_price[1] != 0%}
-				{{mithril_price[1]}}<img src="images/Silver_coin.png">
-			{% endif %}
-				{{mithril_price[2]}}<img src="images/Copper_coin.png">.<br>
-		12 <img src="images/40px-Elder_Wood_Log.png" style="width:20px;height:20px;">Elder Wood Logs for {% if elder_price[0] != 0 %}
-				{{elder_price[0]}}<img src="images/Gold_coin.png">
-			{% endif %}
-				{% if elder_price[0] != 0 or elder_price[1] != 0%}
-				{{elder_price[1]}}<img src="images/Silver_coin.png">
-			{% endif %}
-				{{elder_price[2]}}<img src="images/Copper_coin.png">.<br>
-		15
-		{% if t5_name == "Potent Venom Sac" %}
-			<img src="images/40px-Potent_Venom_Sac.png" style="width:20px;height:20px;">{{t5_name}}
-		{% elif t5_name == "Large Scale" %}
-			<img src="images/40px-Large_Scale.png" style="width:20px;height:20px;">{{t5_name}}
-		{% elif t5_name == "Intricate Totem" %}
-			<img src="images/40px-Intricate_Totem.png" style="width:20px;height:20px;">{{t5_name}}
-		{% elif t5_name == "Vial of Potent Blood" %}
-			<img src="images/40px-Vial_of_Potent_Blood.png" style="width:20px;height:20px;">{{t5_name}}
-		{% elif t5_name == "Large Claw" %}
-			<img src="images/40px-Large_Claw.png" style="width:20px;height:20px;">{{t5_name}}
-		{% elif t5_name == "Large Bone" %}
-			<img src="images/40px-Large_Bone.png" style="width:20px;height:20px;">{{t5_name}}
-		{% elif t5_name == "Large Fang" %}
-			<img src="images/40px-Large_Fang.png" style="width:20px;height:20px;">{{t5_name}}
-		{% endif %}
- 		for {% if t5_price[0] != 0 %}
-				{{t5_price[0]}}<img src="images/Gold_coin.png">
-			{% endif %}
-				{% if t5_price[0] != 0 or t5_price[1] != 0%}
-				{{t5_price[1]}}<img src="images/Silver_coin.png">
-			{% endif %}
-				{{t5_price[2]}}<img src="images/Copper_coin.png">.
-		</p>
-		<h2>Selling Price</h2>
-		<p>
-		List your krait slayers for {% if slayer_price[0] != 0 %}
-				{{slayer_price[0]}}<img src="images/Gold_coin.png">
-			{% endif %}
-				{% if slayer_price[0] != 0 or slayer_price[1] != 0%}
-				{{slayer_price[1]}}<img src="images/Silver_coin.png">
-			{% endif %}
-				{{slayer_price[2]}}<img src="images/Copper_coin.png">.
-		</p>
-		<h2>Profits</h2>
-		<p>		
-		{% for p in profits %}
-			{% if p[0] == 1 %}
-				{{p[0]}} slayer
-			{% else %}
-				{{p[0]}} slayers
-			{% endif %}
-				 will net 
-			{% if p[1] != 0 %}
-				{{p[1]}}<img src="images/Gold_coin.png">
-			{% endif %}
-				{% if p[1] != 0 or p[2] != 0%}
-				{{p[2]}}<img src="images/Silver_coin.png">
-			{% endif %}
-				{{p[3]}}<img src="images/Copper_coin.png">.<br>
-		{% endfor %}
-		<h2> Custom Quantities </h2>
-		<form action="/krait">
-		How many do you want to make?<br>
-		<input type="number" name="custom">
-		<br>
-		<input type="submit">
-	</div>
+            <h2>What to Buy For Each Krait Slayer</h2>
+            <p>
+                24 <img src="images/40px-Mithril_Ore.png" style="width:20px;height:20px;">Mithril Ore for 
+                {% if mithril_price[0] != 0 %}
+                    {{mithril_price[0]}}<img src="images/Gold_coin.png">
+                {% endif %}
+                {% if mithril_price[0] != 0 or mithril_price[1] != 0%}
+                    {{mithril_price[1]}}<img src="images/Silver_coin.png">
+                {% endif %}
+                {{mithril_price[2]}}<img src="images/Copper_coin.png">.<br>
+                12 <img src="images/40px-Elder_Wood_Log.png" style="width:20px;height:20px;">Elder Wood Logs for 
+                {% if elder_price[0] != 0 %}
+                    {{elder_price[0]}}<img src="images/Gold_coin.png">
+                {% endif %}
+                    {% if elder_price[0] != 0 or elder_price[1] != 0%}
+                {{elder_price[1]}}<img src="images/Silver_coin.png">
+                    {% endif %}
+                {{elder_price[2]}}<img src="images/Copper_coin.png">.<br>
+                15
+                {% if t5_name == "Potent Venom Sac" %}
+                    <img src="images/40px-Potent_Venom_Sac.png" style="width:20px;height:20px;">{{t5_name}}
+                {% elif t5_name == "Large Scale" %}
+                    <img src="images/40px-Large_Scale.png" style="width:20px;height:20px;">{{t5_name}}
+                {% elif t5_name == "Intricate Totem" %}
+                    <img src="images/40px-Intricate_Totem.png" style="width:20px;height:20px;">{{t5_name}}
+                {% elif t5_name == "Vial of Potent Blood" %}
+                    <img src="images/40px-Vial_of_Potent_Blood.png" style="width:20px;height:20px;">{{t5_name}}
+                {% elif t5_name == "Large Claw" %}
+                    <img src="images/40px-Large_Claw.png" style="width:20px;height:20px;">{{t5_name}}
+                {% elif t5_name == "Large Bone" %}
+                    <img src="images/40px-Large_Bone.png" style="width:20px;height:20px;">{{t5_name}}
+                {% elif t5_name == "Large Fang" %}
+                    <img src="images/40px-Large_Fang.png" style="width:20px;height:20px;">{{t5_name}}
+                {% endif %}
+                for {% if t5_price[0] != 0 %}
+                    {{t5_price[0]}}<img src="images/Gold_coin.png">
+                {% endif %}
+                {% if t5_price[0] != 0 or t5_price[1] != 0%}
+                    {{t5_price[1]}}<img src="images/Silver_coin.png">
+                {% endif %}
+                    {{t5_price[2]}}<img src="images/Copper_coin.png">.
+            </p>
+            <h2>Selling Price</h2>
+            <p>
+                List your krait slayers for 
+                {% if slayer_price[0] != 0 %}
+                    {{slayer_price[0]}}<img src="images/Gold_coin.png">
+                {% endif %}
+                {% if slayer_price[0] != 0 or slayer_price[1] != 0%}
+                    {{slayer_price[1]}}<img src="images/Silver_coin.png">
+                {% endif %}
+                {{slayer_price[2]}}<img src="images/Copper_coin.png">.
+            </p>
+            <h2>Profits</h2>
+            <p>		
+                {% for p in profits %}
+                    {% if p[0] == 1 %}
+                        {{p[0]}} slayer
+                    {% else %}
+                        {{p[0]}} slayers
+                    {% endif %}
+                         will net 
+                    {% if p[1] != 0 %}
+                        {{p[1]}}<img src="images/Gold_coin.png">
+                    {% endif %}
+                        {% if p[1] != 0 or p[2] != 0%}
+                        {{p[2]}}<img src="images/Silver_coin.png">
+                    {% endif %}
+                        {{p[3]}}<img src="images/Copper_coin.png">.<br>
+                {% endfor %}
+            </p>
+            <h2> Custom Quantities </h2>
+            <form action="/crafting">
+                How many do you want to make?<br>
+                <input type="number" name="custom">
+                <br>
+                <input type="submit">
+            </form>
+        </div>
     </body>
-    <footer>
-    <p>
-    Page last updated: 
-    </p>
-    <p id="date"></p>
-    
-    <script>
-    document.querySelector('#date').innerHTML = new Date()
-    </script>
-    <p><a href="/legal">Legal Notice</a></p>
-    </footer>
+{% include "footer.html" %}
 </html>

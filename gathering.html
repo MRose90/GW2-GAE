@@ -1,0 +1,85 @@
+<html>
+<head>
+<link type="text/css" rel="stylesheet" href="stylesheets/index.css" />
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0-rc.3/angular.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0-rc.3/angular-route.js"></script>
+<script src="scripts/gathering.js"></script>
+</head>
+<header>
+    <div class ="headerdiv" align=center>
+    <a href="/"><img src="images/GW2HH.png"/></a>
+   </div>
+    <div class ="headerdiv" align=center>
+        <a href="/crafting"><img src="images/crafting.png" height="30"/></a>
+        <a href="/gathering"><img src="images/gathering.png" height="30"/></a>
+</div>
+</header>
+<body class='gathering' ng-app='nodeApp' ng-controller='node-cont'>  
+    <div class="title">
+            <h1>Perma-Node Farm Formatter</h1>
+        </div>
+    <div class="description">
+        <div class='icons'>
+                <span ng-repeat='nt in shortTypes'><input type="checkbox" class="gatheringchkbox" id="check-{{nt}}" ng-model='types[nt].val' ng-change='doNodeList()' /> <label for="check-{{nt}}">
+                    <img ng-if=types[nt].val ng-src='{{types[nt].file}}'>
+                    <img class='brightnessFilter' ng-if=!types[nt].val ng-src='{{types[nt].file}}' >
+                </label></span>
+        </div>
+        <table>
+            <tr>
+                <td class='gatheringtable'>
+                    Message of the Day        
+                </td>
+                <td class='gatheringtable'>
+                    Chat
+                </td>
+                <td class='gatheringtable'>
+                    Unformatted
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p class='gathernote'>
+                    MotD length only allows for 15 lines of this length, so the breakdown is 1-15,16-30,31+.
+                    </p>
+                </td>
+                <td>
+                    <p class='gathernote'>
+                    This is formatted for each number to be pasted seperately in chat so that chat codes don't get cut off.
+                    </p>
+                </td>
+                <td>
+                </td>
+            </tr>
+            <tr class=gatherchat>
+                <td>
+                    <pre>{{motd}}</pre>
+                </td>
+                <td>
+                    <pre>{{chat}}</pre>
+                </td>
+                <td>
+                    <pre>{{unformatted}}</pre>
+                </td>
+            </tr>
+        </table>
+        <p>
+        Many thanks to katubug.6378 for creating the only perma-node farming route that I used. This page was created using the order from <a href="http://starbuckguild.com/ore/">http://starbuckguild.com/ore/</a>.
+        </p>
+    </div>
+</body>
+    <footer>
+    <div>
+	<div class="description">
+		<span>
+			Page last updated: 
+		</span>
+		<span id="date"></span>
+		<script>
+			document.querySelector('#date').innerHTML = new Date()
+		</script>	
+        <span class="footerspan"><a href="/legal">Legal Notice</a></span>
+	</div>
+    </div>
+</footer>
+</html>

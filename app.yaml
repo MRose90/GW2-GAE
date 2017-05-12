@@ -1,5 +1,4 @@
 runtime: python27
-api_version: 1
 threadsafe: yes
 
 handlers:
@@ -7,14 +6,17 @@ handlers:
   static_dir: stylesheets
 - url: /images
   static_dir: images
-- url: /krait.*
+- url: /scripts
+  static_dir: scripts
+- url: /crafting.*
   script: slayers.application
 - url: /legal
-  static_files: legal.html
-  upload: legal.html
+  script: legal.application
+- url: /gathering
+  static_files: gathering.html
+  upload: gathering.html
 - url: /
-  static_files: index.html
-  upload: index.html
+  script: index.app
 
 libraries:
 - name: webapp2

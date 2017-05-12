@@ -158,6 +158,6 @@ class MainPage(webapp2.RequestHandler):
         self.response.write(template.render(template_values))
         
 application = webapp2.WSGIApplication([
-    ('/krait', MainPage),
+    ('/crafting', MainPage),
 ], debug=True)
 
