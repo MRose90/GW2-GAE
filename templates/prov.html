@@ -13,17 +13,9 @@
         </div>
         <div class="description">
             <section>
-                <h2 align='center'>Cheapest Overall</h2><span>Toggle Section</span>
+                <h2 align='center'>Cheapest Overall <span> Toggle Section</span></h2>
                 <main>
             <table align='center'>
-                <thead>
-                <tr>
-                    <th>
-                    Toggle Table                   
-                    </th>
-                    </tr>
-                </thead>
-                <tbody>
                 <tr>
                     <td align='center'>Trader</td>
                     <td align='center'>Crafted(Order)</td>
@@ -89,28 +81,19 @@
                     {% endif %}
                     {{row[4][1][2]}}<img src="images/Copper_coin.png">
                         </td>
-                        
                     </tr>
-                </tbody>
             {% endfor %}
             </table>
             </main>
             </section>
             <section>
-            <h2 align='center'>Provisioner Breakdown</h2>
-            <span>Toggle Section</span>
+            <h2 align='center'>Provisioner Breakdown <span> Toggle Section</span></h2>
             {% for p in prov %}
             <main>
-            <h3 align='center'>{{p[0]}}</h3>
+                <section>
+            <h3 align='center'>{{p[0]}} <span> Toggle Table</span></h3>
+                    <main>
             <table align='center'>
-                <thead>
-                    <tr>
-                        <th>
-                        Toggle Table 
-                        </th>
-                    </tr>
-                </thead>
-                <tbody>
                 <tr>
                     <td align='center'>Item</td>
                     <td align='center'>Crafted(Order)</td>
@@ -138,27 +121,22 @@
                     {% endfor %}
                 </tr>
                 {% endfor %}
-                </tbody>
             </table>
+                    </main>
+                </section>
             {% endfor %}
                 </main>
             </section>
             
             <section>
-            <h2 align='center'>Crafting Profession Breakdown</h2>
-                <span>Toggle Section</span>
+            <h2 align='center'>Crafting Profession Breakdown <span> Toggle Section</span></h2>
+                
                 <main>
             {% for p in craft %}
-            <h3 align='center'>{{p[0]}}</h3>
+                    <section>
+            <h3 align='center'>{{p[0]}} <span> Toggle Table</span></h3>
+                        <main>
             <table align='center'>
-                <thead>
-                    <tr>
-                        <th>
-                        Toggle Table
-                        </th>
-                    </tr>
-                </thead>
-                <tbody>
                 <tr>
                     <td align='center'>Item</td>
                     <td align='center'>Crafted(Order)</td>
@@ -186,8 +164,9 @@
                     {% endfor %}
                 </tr>
                 {% endfor %}
-                </tbody>
             </table>
+                        </main>
+                    </section>
             {% endfor %} 
                 </main>
             </section>

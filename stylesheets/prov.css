@@ -34,9 +34,13 @@ background-attachment: fixed;
 }
 
 h2{
+    font-size: 30;
     color: rgb(255,255,0);
 }
 
+h3{
+    font-size: 25;
+}
 
 .headerdiv{
     padding-top: 10px;
@@ -58,6 +62,11 @@ thead{
 
 span{
     color: 	rgb(255,140,0);
+    font-size: 14;
+}
+
+table{
+    table-layout:fixed;
 }
 
 pre{
