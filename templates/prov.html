@@ -4,6 +4,7 @@
         @import url('stylesheets/prov.css');
         </style>
         <link type="text/css" rel="stylesheet" href="stylesheets/backgrounds.css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     </head>
     {% include "templates/header.html" %}
     <body class="prov">
@@ -11,8 +12,18 @@
                 <h1>Faction Provisioner Prices</h1>
         </div>
         <div class="description">
-            <h2 align='center'>Cheapest Overall</h2>
+            <section>
+                <h2 align='center'>Cheapest Overall</h2><span>Toggle Section</span>
+                <main>
             <table align='center'>
+                <thead>
+                <tr>
+                    <th>
+                    Toggle Table                   
+                    </th>
+                    </tr>
+                </thead>
+                <tbody>
                 <tr>
                     <td align='center'>Trader</td>
                     <td align='center'>Crafted(Order)</td>
@@ -79,13 +90,27 @@
                     {{row[4][1][2]}}<img src="images/Copper_coin.png">
                         </td>
                         
-                    </tr>            
+                    </tr>
+                </tbody>
             {% endfor %}
             </table>
+            </main>
+            </section>
+            <section>
             <h2 align='center'>Provisioner Breakdown</h2>
             {% for p in prov %}
+            <span>Toggle Section</span>
+            <main>
             <h3 align='center'>{{p[0]}}</h3>
             <table align='center'>
+                <thead>
+                    <tr>
+                        <th>
+                        Toggle Table 
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
                 <tr>
                     <td align='center'>Item</td>
                     <td align='center'>Crafted(Order)</td>
@@ -113,15 +138,27 @@
                     {% endfor %}
                 </tr>
                 {% endfor %}
+                </tbody>
             </table>
             {% endfor %}
+                </main>
+            </section>
             
-            
-            
+            <section>
             <h2 align='center'>Crafting Profession Breakdown</h2>
+                <span>Toggle Section</span>
+                <main>
             {% for p in craft %}
             <h3 align='center'>{{p[0]}}</h3>
             <table align='center'>
+                <thead>
+                    <tr>
+                        <th>
+                        Toggle Table
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
                 <tr>
                     <td align='center'>Item</td>
                     <td align='center'>Crafted(Order)</td>
@@ -149,9 +186,13 @@
                     {% endfor %}
                 </tr>
                 {% endfor %}
+                </tbody>
             </table>
-            {% endfor %}    
+            {% endfor %} 
+                </main>
+            </section>
         </div>
+    <script src="scripts/prov.js"></script>
     </body>
 {% include "templates/footer.html" %}
 </html>

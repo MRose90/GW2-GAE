@@ -157,6 +157,7 @@ class MainPage(webapp2.RequestHandler):
         template = JINJA_ENVIRONMENT.get_template('templates/slayers.html')
         self.response.write(template.render(template_values))
 
+
 class Redirect(webapp2.RequestHandler):
     def get(self):
         self.redirect('/crafting')

@@ -52,6 +52,14 @@ h2{
     background-color : var(--main-bg-color);
 }
 
+thead{
+    color: 	rgb(255,140,0);
+}
+
+span{
+    color: 	rgb(255,140,0);
+}
+
 pre{
     white-space: pre-wrap;       /* Since CSS 2.1 */
     white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
