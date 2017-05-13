@@ -1,0 +1,44 @@
+:root {
+    --main-font-color: rgb(255,255,255);
+    --main-bg-color: rgba(40,37,37,.6);
+    --main-width: 50%;
+    --footer-width: 25%;
+}
+
+html,body{
+width:100%;
+height:100%;
+margin:0;
+}
+
+header{
+	margin: 0 auto;
+	font-family: Book Antiqua,Palatino Linotype, Palatino,Bookman, Arial;
+	font-size: 12;
+}
+
+a{
+    color: 	rgb(255,140,0);
+}
+
+footer{
+    padding-top: 15px;
+	font-family: Book Antiqua,Palatino Linotype, Palatino,Bookman, Arial;
+	font-size: 14;
+}
+
+body{
+font-family: Book Antiqua,Palatino Linotype, Palatino,Bookman, Arial;
+font-size: 18;
+background-attachment: fixed;
+background-repeat: no-repeat;
+}
+
+.text{
+    margin: 0 auto;
+    color: var(--main-font-color);
+    width: var(--main-width);
+    padding-bottom: 10px;
+    padding-top: 10px;
+    background-color : var(--main-bg-color);
+}

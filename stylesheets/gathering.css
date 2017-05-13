@@ -1,0 +1,49 @@
+:root {
+   --main-bg-color: rgba(0, 0, 0, 0.6);
+   --main-font-color: rgb(255,255,255);
+   --main-width: 50%;
+    --footer-width: 25%;
+}
+
+table{
+    color: var(--main-font-color);
+}
+.gatheringtable{
+    text-align: center;
+    font-size: 18;
+    width:33%;
+}
+.gathermotd{
+    font-size: 10;
+    
+    
+}
+
+.gatherchat{
+    font-size: 10;
+    vertical-align:top;
+    
+}
+
+.gathernote{
+    font-size: 12;
+    vertical-align:top;
+    
+}
+
+img.brightnessFilter{
+    -webkit-filter: brightness(30%);
+    filter=brightness(.3);
+}
+
+.gatherunform{
+    font-size: 10;
+    vertical-align:top;
+}
+
+.icons{
+    text-align: center;
+}
+input.gatheringchkbox{
+    display: none;
+}

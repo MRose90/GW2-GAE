@@ -29,66 +29,13 @@ footer{
 body{
 font-family: Book Antiqua,Palatino Linotype, Palatino,Bookman, Arial;
 font-size: 18;
+background-attachment: fixed;
 }
 
 h2{
     color: rgb(255,255,0);
 }
 
-table{
-    color: var(--main-font-color);
-}
-.gatheringtable{
-    text-align: center;
-    font-size: 18;
-    width:33%;
-}
-.gathermotd{
-    font-size: 10;
-    
-    
-}
-
-.gatherchat{
-    font-size: 10;
-    vertical-align:top;
-    
-}
-
-.gathernote{
-    font-size: 12;
-    vertical-align:top;
-    
-}
-
-img.brightnessFilter{
-    -webkit-filter: brightness(30%);
-    filter=brightness(.3);
-}
-
-.gatherunform{
-    font-size: 10;
-    vertical-align:top;
-}
-
-.icons{
-    text-align: center;
-}
-input.gatheringchkbox{
-    display: none;
-}
-
-.slayers{
-background-image: url("../images/slayers.jpg");
-}
-
-.index{
-background-image: url("../images/index.jpg");
-}
-
-.gathering{
-background-image: url("../images/gathering.jpg");
-}
 
 .headerdiv{
     padding-top: 10px;
@@ -102,6 +49,14 @@ background-image: url("../images/gathering.jpg");
     text-align: center;
     width: var(--main-width);
     background-color : var(--main-bg-color);
+}
+
+pre{
+    white-space: pre-wrap;       /* Since CSS 2.1 */
+    white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+    white-space: -pre-wrap;      /* Opera 4-6 */
+    white-space: -o-pre-wrap;    /* Opera 7 */
+    word-wrap: break-word;       /* Internet Explorer 5.5+ */
 }
 
 .description{
@@ -120,22 +75,6 @@ background-image: url("../images/gathering.jpg");
 	right :var(--footer-width);
 }
 
-.legal{
-background-color : rgb(40,37,37);
-background-image: url("../images/legal.png");
-background-position: left bottom;
-background-repeat: no-repeat;
-}
-
-.legaltext{
-    margin: 0 auto;
-    color: var(--main-font-color);
-    width: var(--main-width);
-    padding-bottom: 10px;
-    padding-top: 10px;
-    background-color : rgba(40,37,37,.6);
-}
-
 pre{
     white-space: pre-wrap;       /* Since CSS 2.1 */
     white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
@@ -143,3 +82,4 @@ pre{
     white-space: -o-pre-wrap;    /* Opera 7 */
     word-wrap: break-word;       /* Internet Explorer 5.5+ */
 }
+

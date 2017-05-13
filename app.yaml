@@ -20,6 +20,8 @@ handlers:
   upload: templates/gathering.html
 - url: /
   script: static_routing.app
+- url: /faction-provisioner
+  script: faction_provisioner.application
 
 libraries:
 - name: webapp2

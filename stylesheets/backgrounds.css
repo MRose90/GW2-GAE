@@ -1,0 +1,21 @@
+.prov{
+background-image: url("../images/prov.jpg");
+}
+
+.slayers{
+background-image: url("../images/slayers.jpg");
+}
+
+.index{
+background-image: url("../images/index.jpg");
+}
+
+.gathering{
+background-image: url("../images/gathering.jpg");
+}
+
+.legal{
+background-color : rgb(40,37,37);
+background-image: url("../images/legal.png");
+background-position: left bottom;
+}

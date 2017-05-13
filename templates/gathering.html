@@ -1,17 +1,24 @@
 <html>
 <head>
-<link type="text/css" rel="stylesheet" href="stylesheets/index.css" />
+    <style type="text/css">
+    @import url('stylesheets/generic.css');
+    @import url('stylesheets/gathering.css');
+    </style>
+    <link type="text/css" rel="stylesheet" href="stylesheets/backgrounds.css" />
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0-rc.3/angular.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0-rc.3/angular-route.js"></script>
 <script src="scripts/gathering.js"></script>
 </head>
 <header>
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="icon" href="favicon.ico" type="image/ico" />
     <div class ="headerdiv" align=center>
-    <a href="/"><img src="images/GW2HH.png"/></a>
-   </div>
+        <a href="/"><img src="images/GW2HH.png"/></a>
+    </div>
     <div class ="headerdiv" align=center>
         <a href="/crafting"><img src="images/crafting.png" height="30"/></a>
         <a href="/gathering"><img src="images/gathering.png" height="30"/></a>
+        <a href="/faction-provisioner"><img src="images/provisioner.png" height="30"/></a>
 </div>
 </header>
 <body class='gathering' ng-app='nodeApp' ng-controller='node-cont'>  

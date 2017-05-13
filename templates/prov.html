@@ -1,0 +1,157 @@
+<html>
+    <head>
+        <style type="text/css">
+        @import url('stylesheets/prov.css');
+        </style>
+        <link type="text/css" rel="stylesheet" href="stylesheets/backgrounds.css" />
+    </head>
+    {% include "templates/header.html" %}
+    <body class="prov">
+        <div class="title">
+                <h1>Faction Provisioner Prices</h1>
+        </div>
+        <div class="description">
+            <h2 align='center'>Cheapest Overall</h2>
+            <table align='center'>
+                <tr>
+                    <td align='center'>Trader</td>
+                    <td align='center'>Crafted(Order)</td>
+                    <td align='center'>Cost</td>
+                    <td align='center'>Crafted(Buy)</td>
+                    <td align='center'>Cost</td>
+                    <td align='center'>Order</td>
+                    <td align='center'>Cost</td>
+                    <td align='center'>Buy</td>
+                    <td align='center'>Cost</td>
+                </tr>
+            {% for row in cheap %}
+
+                    <tr>
+                    <td>
+                        {{row[0]}}
+                    </td>
+                        <td>
+                        {{row[1][0]}}
+                        </td>
+                        <td width= 10% align='right'>
+                        {% if row[1][1][0] != 0 %}
+                        {{row[1][1][0]}}<img src="images/Gold_coin.png">
+                    {% endif %}
+                    {% if row[1][1][0] != 0 or row[1][1][1] != 0%}
+                        {{row[1][1][1]}}<img src="images/Silver_coin.png">
+                    {% endif %}
+                    {{row[1][1][2]}}<img src="images/Copper_coin.png">
+                        </td>
+                        <td>
+                        {{row[2][0]}}
+                        </td>
+                        <td width= 10% align='right'>
+                        {% if row[2][1][0] != 0 %}
+                        {{row[2][1][0]}}<img src="images/Gold_coin.png">
+                    {% endif %}
+                    {% if row[2][1][0] != 0 or row[2][1][1] != 0%}
+                        {{row[2][1][1]}}<img src="images/Silver_coin.png">
+                    {% endif %}
+                    {{row[2][1][2]}}<img src="images/Copper_coin.png">
+                        </td>
+                        <td>
+                        {{row[3][0]}}
+                        </td>
+                        <td width= 10% align='right'>
+                        {% if row[3][1][0] != 0 %}
+                        {{row[3][1][0]}}<img src="images/Gold_coin.png">
+                    {% endif %}
+                    {% if row[3][1][0] != 0 or row[3][1][1] != 0%}
+                        {{row[3][1][1]}}<img src="images/Silver_coin.png">
+                    {% endif %}
+                    {{row[3][1][2]}}<img src="images/Copper_coin.png">
+                        </td>
+                        <td>
+                        {{row[4][0]}}
+                        </td>
+                        <td width= 10% align='right'>
+                        {% if row[4][1][0] != 0 %}
+                        {{row[4][1][0]}}<img src="images/Gold_coin.png">
+                    {% endif %}
+                    {% if row[4][1][0] != 0 or row[4][1][1] != 0%}
+                        {{row[4][1][1]}}<img src="images/Silver_coin.png">
+                    {% endif %}
+                    {{row[4][1][2]}}<img src="images/Copper_coin.png">
+                        </td>
+                        
+                    </tr>            
+            {% endfor %}
+            </table>
+            <h2 align='center'>Provisioner Breakdown</h2>
+            {% for p in prov %}
+            <h3 align='center'>{{p[0]}}</h3>
+            <table align='center'>
+                <tr>
+                    <td align='center'>Item</td>
+                    <td align='center'>Crafted(Order)</td>
+                    <td align='center'>Crafted(Buy)</td>
+                    <td align='center'>Order</td>
+                    <td align='center'>Buy</td>
+                </tr>
+                {% for row in p[1] %}
+                <tr>
+                    <td>
+                        {{row[0]}}
+                    </td>
+                    {% for val in row %}
+                    {% if val is not string %}
+                    <td align='right'>
+                    {% if val[0] != 0 %}
+                        {{val[0]}}<img src="images/Gold_coin.png">
+                    {% endif %}
+                    {% if val[0] != 0 or val[1] != 0%}
+                        {{val[1]}}<img src="images/Silver_coin.png">
+                    {% endif %}
+                    {{val[2]}}<img src="images/Copper_coin.png">
+                    </td>
+                    {% endif %}
+                    {% endfor %}
+                </tr>
+                {% endfor %}
+            </table>
+            {% endfor %}
+            
+            
+            
+            <h2 align='center'>Crafting Profession Breakdown</h2>
+            {% for p in craft %}
+            <h3 align='center'>{{p[0]}}</h3>
+            <table align='center'>
+                <tr>
+                    <td align='center'>Item</td>
+                    <td align='center'>Crafted(Order)</td>
+                    <td align='center'>Crafted(Buy)</td>
+                    <td align='center'>Order</td>
+                    <td align='center'>Buy</td>
+                </tr>
+                {% for row in p[1] %}
+                <tr>
+                    <td>
+                        {{row[0]}}
+                    </td>
+                    {% for val in row %}
+                    {% if val is not string %}
+                    <td align='right' class='provtd'>
+                    {% if val[0] != 0 %}
+                        {{val[0]}}<img src="images/Gold_coin.png">
+                    {% endif %}
+                    {% if val[0] != 0 or val[1] != 0%}
+                        {{val[1]}}<img src="images/Silver_coin.png">
+                    {% endif %}
+                    {{val[2]}}<img src="images/Copper_coin.png">
+                    </td>
+                    {% endif %}
+                    {% endfor %}
+                </tr>
+                {% endfor %}
+            </table>
+            {% endfor %}    
+        </div>
+    </body>
+{% include "templates/footer.html" %}
+</html>
