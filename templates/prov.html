@@ -8,10 +8,12 @@
     </head>
     {% include "templates/header.html" %}
     <body class="prov">
+        
         <div class="title">
                 <h1>Faction Provisioner Prices</h1>
         </div>
         <div class="description">
+            Prices were last updated: {{last}} UTC.
             <section>
                 <h2 align='center'>Cheapest Overall <span> Toggle Section</span></h2>
                 <main>
@@ -35,6 +37,24 @@
                     </td>
                         <td>
                         {{row[1][0]}}
+                        {% if row[1][2] == 0 %}
+                            <img src="images/Weaponsmith_tango_icon_20px.png">
+                        {% endif %}
+                        {% if row[1][2] == 1 %}
+                            <img src="images/Huntsman_tango_icon_20px.png">
+                        {% endif %}
+                        {% if row[1][2] == 2 %}
+                            <img src="images/Artificer_tango_icon_20px.png">
+                        {% endif %}
+                        {% if row[1][2] == 3 %}
+                            <img src="images/Armorsmith_tango_icon_20px.png">
+                        {% endif %}
+                        {% if row[1][2] == 4 %}
+                            <img src="images/Leatherworker_tango_icon_20px.png">
+                        {% endif %}
+                        {% if row[1][2] == 5 %}
+                            <img src="images/Tailor_tango_icon_20px.png">
+                        {% endif %}
                         </td>
                         <td width= 10% align='right'>
                         {% if row[1][1][0] != 0 %}
@@ -47,6 +67,24 @@
                         </td>
                         <td>
                         {{row[2][0]}}
+                            {% if row[2][2] == 0 %}
+                            <img src="images/Weaponsmith_tango_icon_20px.png">
+                        {% endif %}
+                        {% if row[2][2] == 1 %}
+                            <img src="images/Huntsman_tango_icon_20px.png">
+                        {% endif %}
+                        {% if row[2][2] == 2 %}
+                            <img src="images/Artificer_tango_icon_20px.png">
+                        {% endif %}
+                        {% if row[2][2] == 3 %}
+                            <img src="images/Armorsmith_tango_icon_20px.png">
+                        {% endif %}
+                        {% if row[2][2] == 4 %}
+                            <img src="images/Leatherworker_tango_icon_20px.png">
+                        {% endif %}
+                        {% if row[2][2] == 5 %}
+                            <img src="images/Tailor_tango_icon_20px.png">
+                        {% endif %}
                         </td>
                         <td width= 10% align='right'>
                         {% if row[2][1][0] != 0 %}
@@ -59,6 +97,24 @@
                         </td>
                         <td>
                         {{row[3][0]}}
+                            {% if row[3][2] == 0 %}
+                            <img src="images/Weaponsmith_tango_icon_20px.png">
+                        {% endif %}
+                        {% if row[3][2] == 1 %}
+                            <img src="images/Huntsman_tango_icon_20px.png">
+                        {% endif %}
+                        {% if row[3][2] == 2 %}
+                            <img src="images/Artificer_tango_icon_20px.png">
+                        {% endif %}
+                        {% if row[3][2] == 3 %}
+                            <img src="images/Armorsmith_tango_icon_20px.png">
+                        {% endif %}
+                        {% if row[3][2] == 4 %}
+                            <img src="images/Leatherworker_tango_icon_20px.png">
+                        {% endif %}
+                        {% if row[3][2] == 5 %}
+                            <img src="images/Tailor_tango_icon_20px.png">
+                        {% endif %}
                         </td>
                         <td width= 10% align='right'>
                         {% if row[3][1][0] != 0 %}
@@ -71,6 +127,24 @@
                         </td>
                         <td>
                         {{row[4][0]}}
+                        {% if row[4][2] == 0 %}
+                            <img src="images/Weaponsmith_tango_icon_20px.png">
+                        {% endif %}
+                        {% if row[4][2] == 1 %}
+                            <img src="images/Huntsman_tango_icon_20px.png">
+                        {% endif %}
+                        {% if row[4][2] == 2 %}
+                            <img src="images/Artificer_tango_icon_20px.png">
+                        {% endif %}
+                        {% if row[4][2] == 3 %}
+                            <img src="images/Armorsmith_tango_icon_20px.png">
+                        {% endif %}
+                        {% if row[4][2] == 4 %}
+                            <img src="images/Leatherworker_tango_icon_20px.png">
+                        {% endif %}
+                        {% if row[4][2] == 5 %}
+                            <img src="images/Tailor_tango_icon_20px.png">
+                        {% endif %}
                         </td>
                         <td width= 10% align='right'>
                         {% if row[4][1][0] != 0 %}

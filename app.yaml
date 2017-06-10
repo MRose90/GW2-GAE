@@ -18,13 +18,16 @@ handlers:
 - url: /gathering
   static_files: templates/gathering.html
   upload: templates/gathering.html
-- url: /
-  script: static_routing.app
 - url: /faction-provisioner
   script: faction_provisioner.application
-
+- url: /
+  script: static_routing.app
+- url: /cph
+  script: cron_price_handler.application
+  
 libraries:
 - name: webapp2
   version: latest
-- name: jinja2
+- name: jinja2 
   version: latest
+  

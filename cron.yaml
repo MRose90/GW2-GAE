@@ -1,0 +1,4 @@
+cron:
+- description: price updater
+  url: /cph
+  schedule: every 1 mins

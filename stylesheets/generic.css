@@ -2,7 +2,8 @@
    --main-bg-color: rgba(0, 0, 0, 0.6);
    --main-font-color: rgb(255,255,255);
    --main-width: 50%;
-    --footer-width: 25%;
+   --footer-width: 25%;
+   --link-color: rgb(255,140,0);
 }
 html,body{
 width:100%;
@@ -17,17 +18,13 @@ header{
 }
 
 a{
-    color: 	rgb(255,140,0);
+    color: var(--link-color);
 }
 
 footer{
     padding-top: 15px;
 	font-family: Book Antiqua,Palatino Linotype, Palatino,Bookman, Arial;
 	font-size: 14;
-}
-
-thead{
-    color: 	rgb(255,140,0);
 }
 
 body{
